@@ -17,7 +17,7 @@ few(function* () {
     console.log('waiting for cert....');
     while (!(yield* exists())) {
         console.log('.');
-        yield cb => setTimeout(cb, 2500);
+        yield cb => setTimeout(cb, process.env['POLL_INTERVAL'] * 1000);
         if (++wait_iters > 10) {
             console.error('timeout waiting for cert');
             throw new Error('timeout');

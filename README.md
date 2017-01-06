@@ -31,20 +31,19 @@ While the unencrypted bucket works fine, the bucket with SSL support has a probl
 Output:
 
 ```
-cb-tester_1  | Creating and running sample ops on a non-encrypted bucket
+cb-tester_1  | creating bucket and running sample ops on a non-encrypted bucket
 cb-tester_1  | inserted value for "key"
-cb-tester_1  | Found value: {"cas":"1483699622810419200","value":{"val1":1,"val2":"string"}}
+cb-tester_1  | found value: {"cas":"1483708423991394304","value":{"val1":1,"val2":"string"}}
 cb-tester_1  |
 cb-tester_1  |
 cb-tester_1  | *** At this point we managed to inset and fetch a key via the non encrypted bucket successfully ***
 cb-tester_1  |
 cb-tester_1  |
-cb-tester_1  | creating and doing the same on an encrypted bucket
+cb-tester_1  | creating bucket and running sample ops on an encrypted bucket
 cb-tester_1  | inserted value for "keys"
 cb-tester_1  |
 cb-tester_1  | /app/node_modules/few/index.js:99
 cb-tester_1  |     isFunction(cb) ? cb : err => { if (err) process.nextTick(() => { throw err; }); });
 cb-tester_1  |                                                                      ^
 cb-tester_1  | CouchbaseError: Client-Side timeout exceeded for operation. Inspect network conditions or increase the timeout
-couchbasejsssldemo_cb-tester_1 exited with code 1
 ```

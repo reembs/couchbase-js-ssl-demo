@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
-rm vol/cluster.pem
-docker-compose build
-docker-compose up
-docker-compose down
+
+export POLL_INTERVAL=${POLL_INTERVAL:-3}
+
+rm vol/cluster.pem 2> /dev/null
+
+function cleanup {
+    docker-compose down
+}
+
+trap cleanup EXIT
+
+docker-compose build && docker-compose up

@@ -9,7 +9,7 @@ until curl --output /dev/null --silent --head --fail http://couchbase.local:8091
       exit -1
     fi
     echo '.'
-    sleep 1
+    sleep ${POLL_INTERVAL}
 done
 
 couchbase-cli node-init -c couchbase.local:8091 \
