@@ -2,7 +2,7 @@
 
 This repo is meant at demonstrating an issue/bug I am encountering with Couchbase Node.js SDK using SSL encryption.
 
-The docker-composes sets up an environment with the following:
+The docker-compose sets up an environment with the following:
 
 1. A Couchbase server off default couchbase/server:enterprise-4.5.1 image
 2. A cluster initializer that uses couchbase-cli to initialize the single node cluster and create a password protected bucket
