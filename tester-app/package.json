@@ -2,7 +2,7 @@
   "name": "cb_tester",
   "version": "0.0.1",
   "dependencies": {
-    "couchbase": "2.2.5",
+    "couchbase": "2.3.0",
     "few": "latest"
   },
   "devDependencies": {
