@@ -1,0 +1,26 @@
+version: '2'
+services:
+  couchbase:
+    build:
+      context: ./couchbase-server
+    extra_hosts:
+      - "couchbase.local:127.0.0.1"
+    ports:
+      - "8091:8091"
+  cb-init:
+    build:
+      context: ./server-initializer
+    volumes:
+      - "./vol:/vol"
+    links:
+      - couchbase:couchbase.local
+  cb-tester:
+    build:
+      context: ./tester-app
+    links:
+      - couchbase:couchbase.local
+    volumes:
+      - "./vol:/vol"
+    environment:
+      - "SKIP_NON_SECURE=false"
+
