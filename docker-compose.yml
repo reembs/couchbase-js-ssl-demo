@@ -22,5 +22,5 @@ services:
     volumes:
       - "./vol:/vol"
     environment:
-      - "SKIP_NON_SECURE=false"
+      - "SKIP_NON_SECURE"
 

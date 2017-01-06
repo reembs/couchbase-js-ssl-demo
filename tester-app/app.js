@@ -28,22 +28,22 @@ few(function* () {
     //console.log(yield cb => fs.readFile(certPath, 'utf8', cb));
 
     if (process.env['SKIP_NON_SECURE'] !== 'true') {
-        console.log('Creating and running sample ops on a non-encrypted bucket');
+        console.log('creating bucket and running sample ops on a non-encrypted bucket');
         const cluster = new cb.Cluster(`couchbase://couchbase.local`);
         const bucket = cluster.openBucket('bucket', 'bucketpass');
         yield cb => bucket.insert('key', {'val1': 1, 'val2': 'string'}, {}, cb);
         console.log('inserted value for "key"');
         const value = yield cb => bucket.get('key', cb);
-        console.log("Found value: " + JSON.stringify(value));
+        console.log("found value: " + JSON.stringify(value));
 
         console.log('\n\n*** At this point we managed to inset and fetch a key via the non encrypted bucket successfully ***\n\n');
     }
 
-    console.log('creating and doing the same on an encrypted bucket');
+    console.log('creating bucket and running sample ops on an encrypted bucket');
     const clusters = new cb.Cluster(`couchbases://couchbase.local?certpath=${certPath}`);
     const buckets = clusters.openBucket('bucket', 'bucketpass');
     yield cb => buckets.insert('keys', {'val1': 1, 'val2': 'string'}, {}, cb);
     console.log('inserted value for "keys"');
     const values = yield cb => buckets.get('keys', cb);
-    console.log("Found value: " + JSON.stringify(values));
+    console.log("found value: " + JSON.stringify(values));
 });
