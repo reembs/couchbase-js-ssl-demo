@@ -46,4 +46,6 @@ co(function* () {
     console.log('inserted value for "keys"');
     const values = yield cb => buckets.get('keys', cb);
     console.log("found value: " + JSON.stringify(values));
+
+    process.exit()
 });

@@ -19,6 +19,8 @@ services:
       - "LCB_LOGLEVEL=5"
       - "LCB_OPTIONS=detailed_errcodes=1"
   cb-tester:
+    depends_on:
+      - cb-init
     build:
       context: ./tester-app
     links:

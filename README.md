@@ -20,8 +20,6 @@ Run:
 ./run_test.sh
 ```
 
-To quit: Ctrl+C
-
 ### The issue
 
 The tester app initializes two Couchbase cluster objects directed at the same cluster, first unencrypted and then encrypted.

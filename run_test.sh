@@ -10,4 +10,4 @@ function cleanup {
 
 trap cleanup EXIT
 
-docker-compose build && docker-compose up
+docker-compose build && docker-compose run cb-tester
