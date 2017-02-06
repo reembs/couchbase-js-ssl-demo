@@ -38,4 +38,6 @@ sleep 5 # allow cb time to become ready to serve, cert writing signals tester to
 /opt/couchbase/bin/couchbase-cli ssl-manage -c couchbase.local:8091 \
     -u Administrator \
     -p 'password' \
-    --cluster-cert-info > /vol/cluster.pem
+    --cluster-cert-info > /vol/cluster-tmp.pem
+
+mv /vol/cluster-tmp.pem /vol/cluster.pem

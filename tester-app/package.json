@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "couchbase": "2.3.0",
-    "few": "latest"
+    "co": "latest"
   },
   "devDependencies": {
   },

@@ -1,10 +1,10 @@
 const cb = require('couchbase');
-const few = require('few');
+const co = require('co');
 const fs = require('fs');
 
 const certPath = '/vol/cluster.pem';
 
-few(function* () {
+co(function* () {
     function* exists() {
         return yield cb => fs.stat(certPath, function(err, stats) {
             if(err || (!stats))

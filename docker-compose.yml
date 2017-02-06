@@ -16,6 +16,8 @@ services:
       - couchbase:couchbase.local
     environment:
       - "POLL_INTERVAL"
+      - "LCB_LOGLEVEL=5"
+      - "LCB_OPTIONS=detailed_errcodes=1"
   cb-tester:
     build:
       context: ./tester-app
