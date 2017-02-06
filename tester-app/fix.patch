@@ -1,0 +1,10 @@
+--- src/ssl/ssl_c.c
++++ src/ssl/ssl_c.c
+@@ -137,6 +137,7 @@
+ {
+     lcbio_CSSL *cs = arg;
+     appdata_encode(cs);
++    schedule_wants(cs);
+     appdata_free_flushed(cs);
+ }
+

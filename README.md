@@ -1,3 +1,5 @@
+**Update 6/2/17:** Couchbase Support had figured out the issue and the fix is now included in this repo. Take a look at the tester-app/fix.patch
+
 ## Couchbase Node.js SDK SSL issue
 
 This repo is meant at demonstrating an issue/bug I am encountering with Couchbase Node.js SDK using SSL encryption.
